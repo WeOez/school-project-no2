@@ -1,0 +1,130 @@
+[gd_scene load_steps=19 format=3 uid="uid://b4cegwy0qk3mq"]
+
+[ext_resource type="Script" uid="uid://cdgruu0tgcyfd" path="res://scripts/PuzzlePiece.gd" id="1_5u88k"]
+[ext_resource type="Texture2D" uid="uid://q8x3yrneiq4u" path="res://assets/icons/школа 52.png" id="3_2tyvn"]
+[ext_resource type="Texture2D" uid="uid://dhhkmhfx46bca" path="res://assets/icons/Памятник коневу.png" id="4_0htly"]
+[ext_resource type="Texture2D" uid="uid://d2n8i315e1erg" path="res://assets/icons/Церковь.png" id="4_r3pnh"]
+[ext_resource type="Texture2D" uid="uid://sw7hjb18pjgw" path="res://assets/icons/КП.png" id="5_r3pnh"]
+[ext_resource type="Texture2D" uid="uid://c5qbbfuocugdv" path="res://assets/icons/Фестиваль.png" id="6_sufm7"]
+[ext_resource type="Texture2D" uid="uid://5a5lkodnbc0t" path="res://assets/icons/27 школа.png" id="7_kn8ld"]
+[ext_resource type="Texture2D" uid="uid://bmrbhfdqamqk8" path="res://assets/icons/ДСААФ.png" id="8_nd6u3"]
+[ext_resource type="Texture2D" uid="uid://cylmjrbubg4uf" path="res://assets/icons/РИО.png" id="9_leyki"]
+[ext_resource type="Texture2D" uid="uid://cb4isnon8e1tc" path="res://assets/icons/глобус BIGGGGGG BON.png" id="9_r3pnh"]
+[ext_resource type="Texture2D" uid="uid://qcxc10r58x0j" path="res://assets/icons/CШ 1.png" id="12_kn8ld"]
+[ext_resource type="Texture2D" uid="uid://dqa1us7gnrq6h" path="res://assets/icons/Устрица.png" id="12_sufm7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs04a"]
+size = Vector2(10.2, 10)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3pnh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sufm7"]
+bg_color = Color(0.6, 0.6, 0.6, 0.9)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn8ld"]
+bg_color = Color(0.6, 0.6, 0.6, 0.9)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nd6u3"]
+bg_color = Color(0.6, 0.6, 0.6, 0.9)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3pnh"]
+bg_color = Color(1, 1, 1, 0.686275)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HouseIcon" type="Area2D" node_paths=PackedStringArray("Textures", "remove_from_cell_button")]
+script = ExtResource("1_5u88k")
+Textures = [NodePath("School52"), NodePath("Church"), NodePath("Scene"), NodePath("Festival"), NodePath("School27"), NodePath("DOSAAF"), NodePath("Globus"), NodePath("RIO"), NodePath("Konev"), NodePath("Pool"), NodePath("SportsSchool")]
+remove_from_cell_button = NodePath("Button")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(7.5, 7.5)
+shape = SubResource("RectangleShape2D_xs04a")
+
+[node name="School52" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_2tyvn")
+
+[node name="Church" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_r3pnh")
+
+[node name="Scene" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_r3pnh")
+
+[node name="Festival" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_sufm7")
+
+[node name="School27" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_kn8ld")
+
+[node name="DOSAAF" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_nd6u3")
+
+[node name="Globus" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_r3pnh")
+
+[node name="RIO" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_leyki")
+
+[node name="Konev" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_0htly")
+
+[node name="Pool" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_sufm7")
+offset = Vector2(0, 200)
+
+[node name="SportsSchool" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_kn8ld")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r3pnh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sufm7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn8ld")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nd6u3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r3pnh")
+
+[connection signal="area_entered" from="." to="." method="_on_other_piece_entered"]
+[connection signal="area_exited" from="." to="." method="_on_other_piece_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_pressed_remove_from_cell"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vuqkm15e3frw"]
+
+[ext_resource type="Texture2D" uid="uid://50ia61y5hedj" path="res://assets/ЮЗР_2022.jpg" id="1_qt8jq"]
+
+[node name="second_map_game" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(2, -1)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("1_qt8jq")

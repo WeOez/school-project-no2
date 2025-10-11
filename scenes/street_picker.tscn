@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://0vggfaigyivv"]
+
+[ext_resource type="Script" uid="uid://dcgvuy04wx7jl" path="res://scripts/street_picker.gd" id="1_458dy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_458dy"]
+bg_color = Color(0, 0, 0, 0.435294)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="street_picker" type="Node2D" node_paths=PackedStringArray("names", "button")]
+script = ExtResource("1_458dy")
+names = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya")]
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 159.0
+offset_top = 145.0
+offset_right = 413.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Proizvodstvennaya" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_458dy")
+
+[node name="Vorovskovo" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_458dy")
+
+[node name="Solnechnaya" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 234.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_458dy")
+
+[connection signal="pressed" from="Button" to="." method="_on_pressed"]

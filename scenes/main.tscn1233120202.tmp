@@ -1,0 +1,334 @@
+[gd_scene load_steps=19 format=3 uid="uid://bxcn3kkyjlht6"]
+
+[ext_resource type="Texture2D" uid="uid://ype37oi8tiho" path="res://assets/map1.jpg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c7cwtkkno0qrc" path="res://scenes/you_lost_scene.tscn" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b4cegwy0qk3mq" path="res://scenes/house_icon.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://btsi2jjyyyxtp" path="res://scripts/Cell.gd" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://cp6gsnjvwbnjt" path="res://scripts/game_finisher.gd" id="4_jyhfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
+material = SubResource("StandardMaterial3D_h2yge")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_lquwl"]
+
+[node name="Main" type="Node2D"]
+
+[node name="YouLostScene" parent="." instance=ExtResource("1_tbgi4")]
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = 970.0
+offset_top = 431.0
+offset_right = 970.0
+offset_bottom = 431.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameFinisher" type="Node2D" parent="."]
+script = ExtResource("4_jyhfs")
+finishing_amount = 9
+max_mistakes_amount = 3
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(2, -1)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_ig7tw")
+centered = false
+offset = Vector2(1200, 0)
+
+[node name="School52" type="Area2D" parent="Map"]
+position = Vector2(1877.78, 868.889)
+script = ExtResource("2_h2yge")
+
+[node name="School52Collision" type="CollisionShape2D" parent="Map/School52"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/School52"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="KP" type="Area2D" parent="Map"]
+position = Vector2(2457.64, 941.873)
+script = ExtResource("2_h2yge")
+
+[node name="KPCollision" type="CollisionShape2D" parent="Map/KP"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/KP"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="Vietnam" type="Area2D" parent="Map"]
+position = Vector2(2807.54, 711.111)
+script = ExtResource("2_h2yge")
+
+[node name="VietnamBomba" type="CollisionShape2D" parent="Map/Vietnam"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Vietnam"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="Fest" type="Area2D" parent="Map"]
+position = Vector2(2077.78, 1235.56)
+script = ExtResource("2_h2yge")
+
+[node name="FestCollision" type="CollisionShape2D" parent="Map/Fest"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Fest"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="Infa15ballov" type="Area2D" parent="Map"]
+position = Vector2(2077.78, 1384.43)
+script = ExtResource("2_h2yge")
+
+[node name="Nahui" type="CollisionShape2D" parent="Map/Infa15ballov"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Infa15ballov"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="DOSAAF" type="Area2D" parent="Map"]
+position = Vector2(1700, 934.759)
+script = ExtResource("2_h2yge")
+
+[node name="DOSAAFCollision" type="CollisionShape2D" parent="Map/DOSAAF"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/DOSAAF"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="Abobus" type="Area2D" parent="Map"]
+position = Vector2(2717.78, 546.667)
+script = ExtResource("2_h2yge")
+
+[node name="AbobusTunTunTun" type="CollisionShape2D" parent="Map/Abobus"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Abobus"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="RIO" type="Area2D" parent="Map"]
+position = Vector2(2040, 1682.22)
+script = ExtResource("2_h2yge")
+
+[node name="RioDeZhaneiro" type="CollisionShape2D" parent="Map/RIO"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/RIO"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_1bvp3")
+
+[node name="Konev" type="Area2D" parent="Map"]
+position = Vector2(2488.89, 675.556)
+script = ExtResource("2_h2yge")
+
+[node name="KonevCollsion" type="CollisionShape2D" parent="Map/Konev"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Konev"]
+scale = Vector2(30, 30)
+mesh = SubResource("SphereMesh_lquwl")
+
+[node name="Icons" type="Node2D" parent="."]
+
+[node name="HouseIcon" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(446, 490)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon2" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(446, 390)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon3" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(446, 590)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon4" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(860, 1000)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon5" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(1060, 1000)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon6" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(1506, 590)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon7" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(1506, 490)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon8" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(1506, 390)
+scale = Vector2(1.25, 1.25)
+
+[node name="HouseIcon9" parent="Icons" instance=ExtResource("2_0xm2m")]
+position = Vector2(960, 1000)
+scale = Vector2(1.25, 1.25)
+
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon2" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon3" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon4" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon5" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon6" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon7" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon8" method="player_lost_handler"]
+[connection signal="player_lost" from="GameFinisher" to="Icons/HouseIcon9" method="player_lost_handler"]
+[connection signal="area_entered" from="Map/School52" to="Map/School52" method="_on_piece_entered"]
+[connection signal="piece_placed_correctly" from="Map/School52" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/School52" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/KP" to="Map/KP" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/KP" to="Map/KP" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/KP" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/KP" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/Vietnam" to="Map/Vietnam" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/Vietnam" to="Map/Vietnam" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/Vietnam" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/Vietnam" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/Fest" to="Map/Fest" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/Fest" to="Map/Fest" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/Fest" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/Fest" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/Infa15ballov" to="Map/Infa15ballov" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/Infa15ballov" to="Map/Infa15ballov" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/Infa15ballov" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/Infa15ballov" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/DOSAAF" to="Map/DOSAAF" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/DOSAAF" to="Map/DOSAAF" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/DOSAAF" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/DOSAAF" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/Abobus" to="Map/Abobus" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/Abobus" to="Map/Abobus" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/Abobus" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/Abobus" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/RIO" to="Map/RIO" method="_on_piece_entered"]
+[connection signal="area_exited" from="Map/RIO" to="Map/RIO" method="_on_piece_exited"]
+[connection signal="piece_placed_correctly" from="Map/RIO" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/RIO" to="GameFinisher" method="accept_mistake"]
+[connection signal="area_entered" from="Map/Konev" to="Map/Konev" method="_on_piece_entered"]
+[connection signal="piece_placed_correctly" from="Map/Konev" to="GameFinisher" method="accept_cell"]
+[connection signal="player_made_mistake" from="Map/Konev" to="GameFinisher" method="accept_mistake"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon2" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon3" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon4" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon5" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon6" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon7" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon8" to="Map/Konev" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/School52" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/KP" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/Vietnam" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/Fest" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/Infa15ballov" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/DOSAAF" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/Abobus" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/RIO" method="handle_recreation"]
+[connection signal="remove_from_cell" from="Icons/HouseIcon9" to="Map/Konev" method="handle_recreation"]
