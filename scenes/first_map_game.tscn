@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxcn3kkyjlht6"]
+[gd_scene load_steps=47 format=3 uid="uid://bxcn3kkyjlht6"]
 
 [ext_resource type="Script" uid="uid://dphb03wwintwd" path="res://scripts/main_window.gd" id="1_ih8u0"]
 [ext_resource type="Script" uid="uid://boxodeughgk4n" path="res://scripts/timer.gd" id="1_uffq5"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://gw84sa1suh74" path="res://assets/sounds/piece_picked.wav" id="12_y458n"]
 [ext_resource type="Texture2D" uid="uid://50ia61y5hedj" path="res://assets/ЮЗР_2022.jpg" id="15_rn6u2"]
 [ext_resource type="Script" uid="uid://dnasf6w1olh86" path="res://scripts/cell_numbers.gd" id="18_rn6u2"]
+[ext_resource type="Script" uid="uid://b3qvmhyppworf" path="res://scripts/street_manager.gd" id="20_ci4lk"]
 [ext_resource type="PackedScene" uid="uid://0vggfaigyivv" path="res://scenes/street_picker.tscn" id="20_k4184"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6fs0"]
@@ -304,7 +305,7 @@ stream = ExtResource("12_y458n")
 [node name="GameFinisher" type="Node2D" parent="."]
 visible = false
 script = ExtResource("3_uffq5")
-finishing_amount = 10
+finishing_amount = 13
 max_mistakes_amount = 3
 max_points = 30
 attempts_count_penalty_multiplier = 2
@@ -651,17 +652,27 @@ position = Vector2(-654, -91)
 [node name="SportsSchool" parent="Map/Pieces" instance=ExtResource("6_6h57d")]
 position = Vector2(615, 27)
 
-[node name="Streets" type="Node2D" parent="Map"]
+[node name="Streets" type="Node2D" parent="Map" node_paths=PackedStringArray("options")]
+script = ExtResource("20_ci4lk")
+options = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya")]
 
 [node name="Proizvodstvennaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(22.6415, 1358.49)
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 
 [node name="Vorovskovo" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(1592.45, 698.113)
+rotation = 0.973894
+scale = Vector2(4, 4)
+correct_id = 1
+
+[node name="Solnechnaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
+position = Vector2(-1920.75, -98.1132)
+rotation = 1.06116
+scale = Vector2(4, 4)
+correct_id = 2
 
 [node name="Panel" type="Panel" parent="Map"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -913,3 +924,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2pnq2")
 [connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/SportsSchool" method="handle_recreation"]
 [connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Konev" method="handle_recreation"]
 [connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Pool" method="handle_recreation"]
+[connection signal="correct" from="Map/Streets" to="GameFinisher" method="accept_cell"]
+[connection signal="mistake" from="Map/Streets" to="Timer" method="_timer_on_player_mistake"]
+[connection signal="mistake" from="Map/Streets" to="GameFinisher" method="accept_mistake"]
