@@ -10,7 +10,6 @@ var mouse_overlaps_option = false
 var original_rotation: float
 
 signal option_picked(option_id: int, option: Button, picker_id: int, self_button: Button)
-signal button_pressed(button_id: int)
 
 func _ready() -> void:
 	for i in names:
@@ -30,7 +29,6 @@ func _input(event: InputEvent) -> void:
 			button.visible = true
 			button_text.visible = true
 			
-	
 			for i in names:
 				i.visible = false
 				tween.tween_property(i, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.15)

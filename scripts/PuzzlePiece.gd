@@ -215,4 +215,6 @@ func _on_other_piece_entered(piece):
 func _on_other_piece_exited(piece):
 	if not is_placed and not is_draggable or is_on_starting_pos:
 		remove_from_cell_button.mouse_filter = Control.MOUSE_FILTER_STOP
-#Получается оно там уже отпустило второй объект, а потом при нажатии он типа обновился и засчитал ошибку
+
+func _on_game_switch():
+	self.visible = false

@@ -5,6 +5,7 @@ signal correct(street)
 signal mistake(street)
 
 func _ready() -> void:
+	self.global_position.y += MainWindow.viewport_size.y
 	for i in options:
 		i.option_picked.connect(check)
 		
@@ -21,3 +22,6 @@ func check(id: int, option: Button, picker_id: int, self_button: Button):
 				var tween = create_tween()
 				tween.tween_property(self_button, "modulate", Color.RED, 0.2)
 				mistake.emit(id)
+
+func _on_game_switched():
+	self.global_position.y -= MainWindow.viewport_size.y

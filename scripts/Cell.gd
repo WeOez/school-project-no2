@@ -6,6 +6,8 @@ var incorrect_cells = [] #для возврата мешей
 @export var mesh: MeshInstance2D
 @export var label: Label
 
+var is_game_switched = false
+
 signal piece_placed_correctly(piece)
 signal player_made_mistake(piece)
 
@@ -24,7 +26,7 @@ func _ready() -> void:
 
 func _on_piece_entered(piece):
 	#Отвечает за постановку зданий и за то, чтобы нельзя было поставить сразу несколько в одну ячейку
-	if self.global_position.distance_to(piece.global_position) < 65 and not self.get_index() in occupied_positions and not piece.is_returning and not piece.is_dragging and not piece.is_placed:
+	if not is_game_switched and self.global_position.distance_to(piece.global_position) < 65 and not self.get_index() in occupied_positions and not piece.is_returning and not piece.is_dragging and not piece.is_placed:
 		occupied_positions.append(self.get_index())
 		var tween = create_tween()
 		tween.tween_property(piece, "global_position", self.global_position, 0.1).set_ease(Tween.EASE_OUT_IN)
@@ -67,3 +69,7 @@ func check_piece(piece):
 					piece.add_to_group("incorrectly_placed_pieces")
 					tween.tween_property(piece.remove_from_cell_button, "modulate", Color.RED, 0.2)
 					player_made_mistake.emit(piece)
+
+func _on_switch_game():
+	self.visible = false
+	is_game_switched = true
