@@ -29,9 +29,7 @@ var target_modulate = Color(1.0, 1.0, 1.0, 1.0)
 @onready var correct_piece_placement: AudioStreamPlayer2D = $"../Sounds/CorrectPiecePlacement"
 @onready var piece_placed_incorrectly: AudioStreamPlayer2D = $"../Sounds/PiecePlacedIncorrectly"
 @onready var win_sound: AudioStreamPlayer2D = $"../Sounds/Win"
-@onready var lose_sound: AudioStreamPlayer2D = $"../Sounds/Lose"
 
-@onready var testing: Label = $"../testing"
 signal player_lost
 signal switch_game
 
@@ -89,7 +87,6 @@ func _process(delta: float) -> void:
 		tween.tween_property(color_rect, "modulate", target_modulate, 0.5)
 		tween.tween_property(win, "modulate", target_modulate, 0.5)
 		tween.tween_property(continue_button, "modulate", target_modulate, 0.5)
-		set_process(false)
 	
 	if correct_pieces.size() == streets_finishing_amount + finishing_amount and is_game_switched:
 		color_rect.visible = true
@@ -113,10 +110,10 @@ func _process(delta: float) -> void:
 		
 		set_process(false)
 	else:
-		print(correct_pieces.size())
+		pass
+		#print(correct_pieces.size())
 		
 func _on_button_press():
-	set_process(true)
 	is_game_switched = true
 	color_rect.visible = false
 	win.visible = false
@@ -132,7 +129,10 @@ func count_points() -> int:
 	var points: int = 0
 	
 	var mistakes_penalty = attempts_count_penalty_multiplier * mistake_pieces.size()
-	var time_penalty = AttemptsCounter.elapsed_time as int / minimal_time_for_penalty
+	var time_penalty = AttemptsCounter.elapsed_time as int / minimal_time_for_penalty #поменять, либо убрать вообще
 	
 	points = max_points - mistakes_penalty - time_penalty
 	return points
+	
+func _exit():
+	get_tree().quit(0)

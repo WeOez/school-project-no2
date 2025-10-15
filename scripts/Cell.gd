@@ -71,5 +71,4 @@ func check_piece(piece):
 					player_made_mistake.emit(piece)
 
 func _on_switch_game():
-	self.visible = false
-	is_game_switched = true
+	self.queue_free()

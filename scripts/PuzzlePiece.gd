@@ -217,4 +217,4 @@ func _on_other_piece_exited(piece):
 		remove_from_cell_button.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func _on_game_switch():
-	self.visible = false
+	self.queue_free()

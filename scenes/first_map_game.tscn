@@ -305,11 +305,12 @@ stream = ExtResource("12_y458n")
 [node name="GameFinisher" type="Node2D" parent="."]
 script = ExtResource("3_uffq5")
 finishing_amount = 10
-streets_finishing_amount = 3
+streets_finishing_amount = 5
 max_mistakes_amount = 3
 max_points = 30
 attempts_count_penalty_multiplier = 2
 minimal_time_for_penalty = 90
+start_from_second_game = true
 
 [node name="Continue" type="Button" parent="GameFinisher"]
 z_index = 4
@@ -672,25 +673,38 @@ position = Vector2(615, 27)
 
 [node name="Streets" type="Node2D" parent="Map" node_paths=PackedStringArray("options")]
 script = ExtResource("20_ci4lk")
-options = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya")]
+options = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley")]
 
 [node name="Proizvodstvennaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(22.6415, 1358.49)
 scale = Vector2(4, 4)
+needs_to_be_different_direction = true
 
 [node name="Vorovskovo" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(1592.45, 698.113)
-rotation = 0.973894
+rotation = 1.05592
 scale = Vector2(4, 4)
 correct_id = 1
 
 [node name="Solnechnaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(-1920.75, -98.1132)
-rotation = 1.06116
+rotation = 1.05592
 scale = Vector2(4, 4)
+needs_to_be_different_direction = true
 correct_id = 2
 
+[node name="Moskovskaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
+position = Vector2(2200, -641.509)
+rotation = 0.42237
+scale = Vector2(3, 3)
+needs_to_be_different_direction = true
+
+[node name="Stroiteley" parent="Map/Streets" instance=ExtResource("20_k4184")]
+position = Vector2(569.811, -800)
+scale = Vector2(1.5, 1.5)
+
 [node name="Panel" type="Panel" parent="Map"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -703,7 +717,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2pnq2")
 
-[connection signal="pressed" from="ExitGameButton" to="GameFinisher" method="continue_game"]
+[connection signal="pressed" from="ExitGameButton" to="GameFinisher" method="_exit"]
 [connection signal="player_lost" from="GameFinisher" to="Map/Pieces/KP" method="player_lost_handler"]
 [connection signal="player_lost" from="GameFinisher" to="Map/Pieces/School52" method="player_lost_handler"]
 [connection signal="player_lost" from="GameFinisher" to="Map/Pieces/Church" method="player_lost_handler"]

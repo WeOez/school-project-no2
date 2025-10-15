@@ -1,36 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://0vggfaigyivv"]
+[gd_scene load_steps=23 format=3 uid="uid://0vggfaigyivv"]
 
 [ext_resource type="Script" uid="uid://dcgvuy04wx7jl" path="res://scripts/street_picker.gd" id="1_458dy"]
+[ext_resource type="Texture2D" uid="uid://ccg4v4j4blfq7" path="res://assets/arrow.png" id="2_glvu8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_458dy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glvu8"]
-bg_color = Color(0.6, 0.6, 0.6, 0.784314)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1f27"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1yyk"]
-bg_color = Color(0.6, 0.6, 0.6, 0.784314)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lilks"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vepx"]
-bg_color = Color(0.6, 0.6, 0.6, 0.784314)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w7ta"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru7kl"]
-bg_color = Color(0.6, 0.6, 0.6, 0.784314)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_deo6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_458dy"]
 size = Vector2(256, 47)
@@ -111,11 +92,14 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="street_picker" type="Node2D" node_paths=PackedStringArray("names", "button", "button_text")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru7kl"]
+
+[node name="street_picker" type="Node2D" node_paths=PackedStringArray("names", "button", "button_text", "arrow")]
 script = ExtResource("1_458dy")
-names = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya")]
+names = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley")]
 button = NodePath("Button")
 button_text = NodePath("ButtonText")
+arrow = NodePath("Button/Arrow")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = -1
@@ -130,10 +114,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_458dy")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_glvu8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i1yyk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3vepx")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ru7kl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u1f27")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lilks")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3w7ta")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_deo6o")
 
 [node name="Area2D" type="Area2D" parent="Button"]
 visible = false
@@ -141,6 +125,11 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D"]
 position = Vector2(127, 22)
 shape = SubResource("RectangleShape2D_458dy")
+
+[node name="Arrow" type="Sprite2D" parent="Button"]
+position = Vector2(127.5, 23)
+scale = Vector2(0.501953, 0.183594)
+texture = ExtResource("2_glvu8")
 
 [node name="Proizvodstvennaya" type="Button" parent="."]
 visible = false
@@ -170,6 +159,46 @@ offset_right = 254.0
 offset_bottom = 46.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3vepx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uuouj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_deo6o")
+
+[node name="Moskovskaya" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ru7kl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uuouj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_deo6o")
+
+[node name="Stroiteley" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ru7kl")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_deo6o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uuouj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_deo6o")
