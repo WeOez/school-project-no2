@@ -310,7 +310,6 @@ max_mistakes_amount = 3
 max_points = 30
 attempts_count_penalty_multiplier = 2
 minimal_time_for_penalty = 90
-start_from_second_game = true
 
 [node name="Continue" type="Button" parent="GameFinisher"]
 z_index = 4
