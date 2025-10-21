@@ -5,6 +5,8 @@ extends Node2D
 @export var button_text: Label
 @export var arrow: Sprite2D
 @export var needs_to_be_different_direction: bool
+@export var drawing: Node2D
+
 
 var id: int
 @export var correct_id: int
@@ -12,7 +14,9 @@ var offset: float
 var mouse_overlaps_option = false
 var original_rotation: float
 
-signal option_picked(option_id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D)
+signal option_picked(option_id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D, drawing: Node2D)
+signal correct_drawing_picked(id: int)
+signal incorrect_drawing_picked(id: int)
 
 func _ready() -> void:
 	for i in names:
@@ -25,8 +29,22 @@ func _ready() -> void:
 	original_rotation = self.rotation_degrees
 	get_label_data()
 	
+	drawing.visible = false
+	drawing.option_picked.connect(_test)
+	
 	if needs_to_be_different_direction:
 		rotate_arrow()
+	
+func _test(draw_id):
+	match draw_id:
+		1, 2, 3, 4, 5:
+			var index = draw_id - 1
+			if index == self.get_index():
+				correct_drawing_picked.emit(self)
+				print(1)
+			else:
+				incorrect_drawing_picked.emit(index)
+				print(index, " ", self.get_index())
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
@@ -43,7 +61,7 @@ func _input(event: InputEvent) -> void:
 func get_label_data():
 	for i in names:
 		id = i.get_index() - 1
-		match id:
+		match id: 
 			0:
 				offset = -92.0
 				names[id].position = button.position + Vector2(0, offset)
@@ -94,7 +112,7 @@ func _on_option_picked(option):
 	button_text.visible = true
 	button_text.text = option.text
 	
-	option_picked.emit(option.get_index(), option, self.get_index(), button, arrow)
+	option_picked.emit(option.get_index(), option, self.get_index(), button, arrow, drawing)
 	
 func _on_mouse_entered_option():
 	mouse_overlaps_option = true

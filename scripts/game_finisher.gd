@@ -30,6 +30,8 @@ var target_modulate = Color(1.0, 1.0, 1.0, 1.0)
 @onready var piece_placed_incorrectly: AudioStreamPlayer2D = $"../Sounds/PiecePlacedIncorrectly"
 @onready var win_sound: AudioStreamPlayer2D = $"../Sounds/Win"
 
+@export var streets: Array[Node2D]
+
 signal player_lost
 signal switch_game
 
@@ -76,6 +78,10 @@ func _ready() -> void:
 	if start_from_second_game:
 		correct_pieces.resize(10)
 	
+	for s in streets:
+		s.correct_drawing_picked.connect(accept_cell)
+		s.incorrect_drawing_picked.connect(accept_mistake)
+	
 func _process(delta: float) -> void:
 	if correct_pieces.size() == finishing_amount and not is_game_switched:
 		color_rect.visible = true
@@ -110,8 +116,8 @@ func _process(delta: float) -> void:
 		
 		set_process(false)
 	else:
-		pass
-		#print(correct_pieces.size())
+		#pass
+		print(correct_pieces.size())
 		
 func _on_button_press():
 	is_game_switched = true

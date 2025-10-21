@@ -9,7 +9,7 @@ func _ready() -> void:
 	for i in options:
 		i.option_picked.connect(check)
 		
-func check(id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D):
+func check(id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D, drawing: Node2D):
 	match id:
 		1, 2, 3, 4, 5:
 			var index = id - 1
@@ -17,6 +17,7 @@ func check(id: int, option: Button, picker_id: int, self_button: Button, arrow: 
 				var tween = create_tween()
 				tween.tween_property(arrow, "modulate", Color(0.443, 0.506, 0.204, 1), 0.2)
 				self_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				drawing.visible = true
 				correct.emit(id)
 			else:
 				var tween = create_tween()

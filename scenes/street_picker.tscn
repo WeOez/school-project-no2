@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://0vggfaigyivv"]
+[gd_scene load_steps=24 format=3 uid="uid://0vggfaigyivv"]
 
 [ext_resource type="Script" uid="uid://dcgvuy04wx7jl" path="res://scripts/street_picker.gd" id="1_458dy"]
 [ext_resource type="Texture2D" uid="uid://ccg4v4j4blfq7" path="res://assets/arrow.png" id="2_glvu8"]
+[ext_resource type="PackedScene" uid="uid://c08a4jkck4i5u" path="res://scenes/drawings.tscn" id="3_i1yyk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_458dy"]
 
@@ -94,12 +95,13 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru7kl"]
 
-[node name="street_picker" type="Node2D" node_paths=PackedStringArray("names", "button", "button_text", "arrow")]
+[node name="street_picker" type="Node2D" node_paths=PackedStringArray("names", "button", "button_text", "arrow", "drawing")]
 script = ExtResource("1_458dy")
 names = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley")]
 button = NodePath("Button")
 button_text = NodePath("ButtonText")
 arrow = NodePath("Button/Arrow")
+drawing = NodePath("Drawings")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = -1
@@ -216,6 +218,10 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Drawings" parent="." node_paths=PackedStringArray("arrow", "button_text") instance=ExtResource("3_i1yyk")]
+arrow = NodePath("../Button/Arrow")
+button_text = NodePath("../ButtonText")
 
 [connection signal="pressed" from="Button" to="." method="_on_pressed"]
 [connection signal="area_entered" from="Button/Area2D" to="." method="_on_area_entered"]

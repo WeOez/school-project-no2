@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://c08a4jkck4i5u"]
+
+[ext_resource type="Script" uid="uid://dx5k5la6l727b" path="res://scripts/drawings.gd" id="1_67ono"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67ono"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2qgw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwu0f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6n13n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yxot3"]
+
+[node name="Drawings" type="Node2D" node_paths=PackedStringArray("options", "main_toggle")]
+script = ExtResource("1_67ono")
+options = [NodePath("Option1"), NodePath("Option2"), NodePath("Option3"), NodePath("Option4"), NodePath("Option5")]
+main_toggle = NodePath("MainToggle")
+
+[node name="MainToggle" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_67ono")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d2qgw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rwu0f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6n13n")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yxot3")
+
+[node name="Option1" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option2" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option3" type="Button" parent="."]
+visible = false
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="Option4" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option5" type="Button" parent="."]
+visible = false
+offset_right = 100.0
+offset_bottom = 100.0

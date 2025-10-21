@@ -4,7 +4,13 @@ var mistakes: int = 0
 @onready var panel: Panel = $"../TimerPanel"
 @onready var exit_game_button: Button = $"../ExitGameButton"
 
+@export var streets: Array[Node2D]
+
 func _ready() -> void:
+	for s in streets:
+		s.incorrect_drawing_picked.connect(_timer_on_player_mistake)
+	
+	
 	self.position -= Vector2(0, MainWindow.center_position.y)
 	panel.size = self.size * 1.93
 	exit_game_button.size = self.size * 2.65

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bxcn3kkyjlht6"]
+[gd_scene load_steps=48 format=3 uid="uid://bxcn3kkyjlht6"]
 
 [ext_resource type="Script" uid="uid://dphb03wwintwd" path="res://scripts/main_window.gd" id="1_ih8u0"]
 [ext_resource type="Script" uid="uid://boxodeughgk4n" path="res://scripts/timer.gd" id="1_uffq5"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dnasf6w1olh86" path="res://scripts/cell_numbers.gd" id="18_rn6u2"]
 [ext_resource type="Script" uid="uid://b3qvmhyppworf" path="res://scripts/street_manager.gd" id="20_ci4lk"]
 [ext_resource type="PackedScene" uid="uid://0vggfaigyivv" path="res://scenes/street_picker.tscn" id="20_k4184"]
+[ext_resource type="Script" uid="uid://lxcc8x88a3gv" path="res://scripts/show_drawing.gd" id="22_chg63"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6fs0"]
 texture = ExtResource("2_2pnq2")
@@ -249,7 +250,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_chg63")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Timer" type="Label" parent="."]
+[node name="Timer" type="Label" parent="." node_paths=PackedStringArray("streets")]
 z_index = 3
 layout_mode = 1
 anchors_preset = 5
@@ -265,6 +266,7 @@ label_settings = SubResource("LabelSettings_6h57d")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_uffq5")
+streets = [NodePath("../Map/Streets/Proizvodstvennaya"), NodePath("../Map/Streets/Vorovskovo"), NodePath("../Map/Streets/Solnechnaya"), NodePath("../Map/Streets/Moskovskaya"), NodePath("../Map/Streets/Stroiteley")]
 
 [node name="testing" type="Label" parent="."]
 visible = false
@@ -302,14 +304,16 @@ stream = ExtResource("11_8ammm")
 [node name="PiecePicked" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("12_y458n")
 
-[node name="GameFinisher" type="Node2D" parent="."]
+[node name="GameFinisher" type="Node2D" parent="." node_paths=PackedStringArray("streets")]
 script = ExtResource("3_uffq5")
 finishing_amount = 10
-streets_finishing_amount = 5
+streets_finishing_amount = 10
 max_mistakes_amount = 3
 max_points = 30
 attempts_count_penalty_multiplier = 2
 minimal_time_for_penalty = 90
+start_from_second_game = true
+streets = [NodePath("../Map/Streets/Proizvodstvennaya"), NodePath("../Map/Streets/Vorovskovo"), NodePath("../Map/Streets/Solnechnaya"), NodePath("../Map/Streets/Moskovskaya"), NodePath("../Map/Streets/Stroiteley")]
 
 [node name="Continue" type="Button" parent="GameFinisher"]
 z_index = 4
@@ -701,6 +705,34 @@ needs_to_be_different_direction = true
 [node name="Stroiteley" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(569.811, -800)
 scale = Vector2(1.5, 1.5)
+
+[node name="Drawings" type="Node2D" parent="Map" node_paths=PackedStringArray("streets")]
+script = ExtResource("22_chg63")
+streets = [NodePath("../Streets/Proizvodstvennaya"), NodePath("../Streets/Vorovskovo"), NodePath("../Streets/Solnechnaya"), NodePath("../Streets/Moskovskaya"), NodePath("../Streets/Stroiteley")]
+
+[node name="Proizvodstvennaya" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(-886.792, 830.189)
+scale = Vector2(0.550314, 0.724618)
+texture = ExtResource("2_2pnq2")
+
+[node name="Vorovskovo" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(600, -286.792)
+texture = ExtResource("2_2pnq2")
+
+[node name="Solnechnaya" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(-1777.36, -400)
+scale = Vector2(0.588051, 0.612309)
+texture = ExtResource("2_2pnq2")
+
+[node name="Moskovskaya" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(1800.48, -589.332)
+scale = Vector2(0.399317, 0.412079)
+texture = ExtResource("2_2pnq2")
+
+[node name="Stroiteley" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(-192.453, -800)
+scale = Vector2(-0.413617, 0.505983)
+texture = ExtResource("2_2pnq2")
 
 [node name="Panel" type="Panel" parent="Map"]
 visible = false
