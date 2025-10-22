@@ -312,7 +312,6 @@ max_mistakes_amount = 3
 max_points = 30
 attempts_count_penalty_multiplier = 2
 minimal_time_for_penalty = 90
-start_from_second_game = true
 streets = [NodePath("../Map/Streets/Proizvodstvennaya"), NodePath("../Map/Streets/Vorovskovo"), NodePath("../Map/Streets/Solnechnaya"), NodePath("../Map/Streets/Moskovskaya"), NodePath("../Map/Streets/Stroiteley")]
 
 [node name="Continue" type="Button" parent="GameFinisher"]

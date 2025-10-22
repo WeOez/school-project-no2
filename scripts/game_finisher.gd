@@ -116,8 +116,8 @@ func _process(delta: float) -> void:
 		
 		set_process(false)
 	else:
-		#pass
-		print(correct_pieces.size())
+		pass
+		#print(correct_pieces.size())
 		
 func _on_button_press():
 	is_game_switched = true
