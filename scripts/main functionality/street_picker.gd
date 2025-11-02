@@ -6,13 +6,15 @@ extends Node2D
 @export var arrow: Sprite2D
 @export var needs_to_be_different_direction: bool
 @export var drawing: Node2D
-
+@export var option_size: Vector2
 
 var id: int
 @export var correct_id: int
 var offset: float
 var mouse_overlaps_option = false
 var original_rotation: float
+
+var option_positions = []
 
 signal option_picked(option_id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D, drawing: Node2D)
 signal correct_drawing_picked(id: int)
@@ -27,7 +29,8 @@ func _ready() -> void:
 		i.mouse_entered.connect(_on_mouse_entered_option)
 		i.mouse_exited.connect(_on_mouse_exited_option)
 	original_rotation = self.rotation_degrees
-	get_label_data()
+	set_positions()
+	get_label_text()
 	
 	drawing.visible = false
 	drawing.option_picked.connect(_test)
@@ -37,7 +40,7 @@ func _ready() -> void:
 	
 func _test(draw_id):
 	match draw_id:
-		1, 2, 3, 4, 5:
+		1, 2, 3, 4, 5, 6, 7:
 			var index = draw_id - 1
 			if index == self.get_index():
 				correct_drawing_picked.emit(self)
@@ -58,30 +61,37 @@ func _input(event: InputEvent) -> void:
 				i.visible = false
 				tween.tween_property(i, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.15)
 
-func get_label_data():
+func set_positions():
+	var max_negative_offset = floori(names.size() / 2) * -option_size.y
+	var max_positive_offset = floori(names.size() / 2) * option_size.y
+	var offset1: int
+	option_positions.resize(names.size())
+	
+	for i in names.size():
+		offset1 = max_negative_offset + (46 * i)
+		names[i].position = button.position + Vector2(0, offset1)
+		
+		if not option_positions.has(offset1):
+			option_positions.set(i, offset1)
+
+func get_label_text():
 	for i in names:
 		id = i.get_index() - 1
 		match id: 
 			0:
-				offset = -92.0
-				names[id].position = button.position + Vector2(0, offset)
 				names[id].text = "Производственная Улица"
 			1:
-				offset = -46.0
-				names[id].position = button.position + Vector2(0, offset)
 				names[id].text = "Улица Воровского"
 			2:
-				offset = 0.0
-				names[id].position = button.position
 				names[id].text = "Солнечная Улица"
 			3:
-				offset = 46.0
-				names[id].position = button.position + Vector2(0, offset)
 				names[id].text = "Московская Улица"
 			4: 
-				offset = 92.0
-				names[id].position = button.position + Vector2(0, offset)
 				names[id].text = "Проспект Строителей"
+			5:
+				names[id].text = "Улица Менделеева"
+			6:
+				names[id].text = "Улица Екатерины Кочкиной"
 
 func rotate_arrow() -> void:
 	arrow.rotation_degrees += 180

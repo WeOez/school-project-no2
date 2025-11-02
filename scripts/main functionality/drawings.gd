@@ -2,18 +2,16 @@ extends Node2D
 
 @export var options: Array[Button]
 @export var main_toggle: Button
-@export var arrow: Sprite2D
-@export var button_text: Label
+@export var option_size: Vector2
 
 var id: int
 var target_pos: Vector2
 var x_offset: float
-const y_offset = 90.0
+var y_offset: int
 var target_positions: Dictionary
 var mouse_overlaps_option: bool
 var starting_pos: Vector2
 var original_rotation: float
-
 
 signal option_picked(id: int)
 
@@ -27,7 +25,8 @@ func _ready() -> void:
 		option.mouse_exited.connect(_on_mouse_exited_option)
 		starting_pos = option.position
 		
-	get_option_data()
+	#get_option_data()
+	set_positions()
 	
 	original_rotation = get_parent().rotation_degrees
 	get_parent().correct_drawing_picked.connect(_erase_from_screen)
@@ -52,10 +51,21 @@ func _input(event: InputEvent) -> void:
 				modulater_reverse.tween_property(option, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.2).set_ease(Tween.EASE_IN)
 				option.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+func set_positions():
+	var max_negative_offset = floori(options.size() / 2) * -option_size.x
+	var max_positive_offset = floori(options.size() / 2) + option_size.x
+	var x_offset1: int
+	
+	y_offset = get_parent().scale.y + (get_parent().scale.y / 2)
+	
+	for i in options.size():
+		x_offset1 = max_negative_offset + ((option_size.x) * i)
+		target_positions.set(i, Vector2(x_offset1, y_offset))
+		print(x_offset1)
+
 func get_option_data():
 	for option in options:
 		id = option.get_index() - 1
-		
 		match id:
 			0: # Задаём позицию ровно по центру кнопки
 				x_offset = -250.0
@@ -75,6 +85,14 @@ func get_option_data():
 				target_positions.set(id, target_pos)
 			4:
 				x_offset = 250.0
+				target_pos = options[id].position + Vector2(x_offset, y_offset)
+				target_positions.set(id, target_pos)
+			5:
+				x_offset = 375.0
+				target_pos = options[id].position + Vector2(x_offset, y_offset)
+				target_positions.set(id, target_pos)
+			6:
+				x_offset = -375.0
 				target_pos = options[id].position + Vector2(x_offset, y_offset)
 				target_positions.set(id, target_pos)
 

@@ -11,11 +11,11 @@ func _ready() -> void:
 		
 func check(id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D, drawing: Node2D):
 	match id:
-		1, 2, 3, 4, 5:
+		1, 2, 3, 4, 5, 6, 7:
 			var index = id - 1
 			if index == picker_id:
 				var tween = create_tween()
-				tween.tween_property(arrow, "modulate", Color(0.443, 0.506, 0.204, 1), 0.2)
+				tween.tween_property(arrow, "modulate", Color.BLUE, 0.2) # нжный цвет: Color(0.443, 0.506, 0.204, 1)
 				self_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 				drawing.visible = true
 				correct.emit(id)

@@ -1,27 +1,34 @@
-[gd_scene load_steps=48 format=3 uid="uid://bxcn3kkyjlht6"]
+[gd_scene load_steps=55 format=3 uid="uid://bxcn3kkyjlht6"]
 
-[ext_resource type="Script" uid="uid://dphb03wwintwd" path="res://scripts/main_window.gd" id="1_ih8u0"]
-[ext_resource type="Script" uid="uid://boxodeughgk4n" path="res://scripts/timer.gd" id="1_uffq5"]
+[ext_resource type="Script" uid="uid://dphb03wwintwd" path="res://scripts/ui/main_window.gd" id="1_ih8u0"]
+[ext_resource type="Script" uid="uid://boxodeughgk4n" path="res://scripts/ui/timer.gd" id="1_uffq5"]
 [ext_resource type="Texture2D" uid="uid://ccmv87igm7j27" path="res://assets/black_background-round-corners.png" id="2_2pnq2"]
 [ext_resource type="Texture2D" uid="uid://cih1g1wtyrlhs" path="res://assets/potential_background.jpg" id="2_6h57d"]
-[ext_resource type="Script" uid="uid://cbk868axrc0xm" path="res://scripts/back_ground_dimmer.gd" id="2_ih8u0"]
-[ext_resource type="Script" uid="uid://cp6gsnjvwbnjt" path="res://scripts/game_finisher.gd" id="3_uffq5"]
-[ext_resource type="Script" uid="uid://btsi2jjyyyxtp" path="res://scripts/Cell.gd" id="5_e6fs0"]
+[ext_resource type="Script" uid="uid://cbk868axrc0xm" path="res://scripts/ui/back_ground_dimmer.gd" id="2_ih8u0"]
+[ext_resource type="Script" uid="uid://cp6gsnjvwbnjt" path="res://scripts/main functionality/game_finisher.gd" id="3_uffq5"]
+[ext_resource type="Script" uid="uid://btsi2jjyyyxtp" path="res://scripts/main functionality/Cell.gd" id="5_e6fs0"]
 [ext_resource type="PackedScene" uid="uid://b4cegwy0qk3mq" path="res://scenes/house_icon.tscn" id="6_6h57d"]
-[ext_resource type="Script" uid="uid://dnjs2h0mgjap2" path="res://scripts/map.gd" id="8_e6fs0"]
+[ext_resource type="Script" uid="uid://dnjs2h0mgjap2" path="res://scripts/ui/map.gd" id="8_e6fs0"]
 [ext_resource type="Texture2D" uid="uid://c7hf5kll8m2d5" path="res://assets/exit_game_icon.png" id="8_nekrx"]
 [ext_resource type="AudioStream" uid="uid://beprm1fk1ogod" path="res://assets/sounds/piece_placed_incorrectly.wav" id="9_4xxpg"]
 [ext_resource type="AudioStream" uid="uid://b8ucpluesk0qj" path="res://assets/sounds/win.mp3" id="10_hm3ny"]
-[ext_resource type="Script" uid="uid://dghgivpli3cuk" path="res://scripts/background.gd" id="11_6h57d"]
+[ext_resource type="Script" uid="uid://dghgivpli3cuk" path="res://scripts/ui/background.gd" id="11_6h57d"]
 [ext_resource type="AudioStream" uid="uid://b1lccm4o7ccjk" path="res://assets/sounds/game_lost.mp3" id="11_8ammm"]
 [ext_resource type="AudioStream" uid="uid://cedw6rkhew2li" path="res://assets/sounds/piece_placed_correctly.wav" id="11_odjla"]
-[ext_resource type="Script" uid="uid://sus1r5huc8ps" path="res://scripts/attempts_counter.gd" id="12_2pnq2"]
+[ext_resource type="Script" uid="uid://sus1r5huc8ps" path="res://scripts/main functionality/attempts_counter.gd" id="12_2pnq2"]
 [ext_resource type="AudioStream" uid="uid://gw84sa1suh74" path="res://assets/sounds/piece_picked.wav" id="12_y458n"]
 [ext_resource type="Texture2D" uid="uid://50ia61y5hedj" path="res://assets/ЮЗР_2022.jpg" id="15_rn6u2"]
-[ext_resource type="Script" uid="uid://dnasf6w1olh86" path="res://scripts/cell_numbers.gd" id="18_rn6u2"]
-[ext_resource type="Script" uid="uid://b3qvmhyppworf" path="res://scripts/street_manager.gd" id="20_ci4lk"]
+[ext_resource type="Script" uid="uid://dnasf6w1olh86" path="res://scripts/ui/cell_numbers.gd" id="18_rn6u2"]
+[ext_resource type="Script" uid="uid://b3qvmhyppworf" path="res://scripts/main functionality/street_manager.gd" id="20_ci4lk"]
 [ext_resource type="PackedScene" uid="uid://0vggfaigyivv" path="res://scenes/street_picker.tscn" id="20_k4184"]
-[ext_resource type="Script" uid="uid://lxcc8x88a3gv" path="res://scripts/show_drawing.gd" id="22_chg63"]
+[ext_resource type="Script" uid="uid://lxcc8x88a3gv" path="res://scripts/ui/show_drawing.gd" id="22_chg63"]
+[ext_resource type="Script" uid="uid://5lj5w4judaa0" path="res://scripts/util/SharedObjects.gd" id="23_js6y1"]
+[ext_resource type="Texture2D" uid="uid://bk6dydyh7dugk" path="res://assets/murals/Father Mushrom.png" id="24_h0u5n"]
+[ext_resource type="Texture2D" uid="uid://5qmvipjls2r7" path="res://assets/murals/konev_xz.png" id="25_dn0ko"]
+[ext_resource type="Texture2D" uid="uid://nhiy7bs2j4ww" path="res://assets/murals/Мурал с батьком и уродами.png" id="26_bto0n"]
+[ext_resource type="Texture2D" uid="uid://p1t04f660utx" path="res://assets/murals/Мурал Киров 5222222.png" id="27_bto0n"]
+[ext_resource type="Texture2D" uid="uid://dycht408w04j3" path="res://assets/murals/Мурал Менделеев.png" id="28_bto0n"]
+[ext_resource type="Texture2D" uid="uid://b3kfv42qya6q8" path="res://assets/murals/Мурал ВАСИЛЕЧЕК.png" id="29_a86b7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6fs0"]
 texture = ExtResource("2_2pnq2")
@@ -106,6 +113,15 @@ shadow_size = 30
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ih8u0")
+
+[node name="SharedObjects" type="Node" parent="." node_paths=PackedStringArray("cells", "pieces", "streets", "street_manager", "drawings", "game_manager")]
+script = ExtResource("23_js6y1")
+cells = [NodePath("../Map/Cells/School52"), NodePath("../Map/Cells/KP"), NodePath("../Map/Cells/Vietnam"), NodePath("../Map/Cells/Fest"), NodePath("../Map/Cells/Infa15ballov"), NodePath("../Map/Cells/DOSAAF"), NodePath("../Map/Cells/Abobus"), NodePath("../Map/Cells/SportsSchool"), NodePath("../Map/Cells/Konev"), NodePath("../Map/Cells/Pool")]
+pieces = [NodePath("../Map/Pieces/School52"), NodePath("../Map/Pieces/Church"), NodePath("../Map/Pieces/KP"), NodePath("../Map/Pieces/Festival"), NodePath("../Map/Pieces/School27"), NodePath("../Map/Pieces/DOSAAF"), NodePath("../Map/Pieces/Globus"), NodePath("../Map/Pieces/Konev"), NodePath("../Map/Pieces/Pool"), NodePath("../Map/Pieces/SportsSchool")]
+streets = [NodePath("../Map/Streets/Proizvodstvennaya"), NodePath("../Map/Streets/Vorovskovo"), NodePath("../Map/Streets/Solnechnaya"), NodePath("../Map/Streets/Moskovskaya"), NodePath("../Map/Streets/Stroiteley"), NodePath("../Map/Streets/Mendeleeva"), NodePath("../Map/Streets/Kochkinoy")]
+street_manager = NodePath("../Map/Streets")
+drawings = [NodePath("../Map/Drawings/Proizvodstvennaya"), NodePath("../Map/Drawings/Vorovskovo"), NodePath("../Map/Drawings/Solnechnaya"), NodePath("../Map/Drawings/Moskovskaya"), NodePath("../Map/Drawings/Stroiteley"), NodePath("../Map/Drawings/Mendeleev")]
+game_manager = NodePath("../GameFinisher")
 
 [node name="TimerAndAtts" type="Node" parent="."]
 script = ExtResource("12_2pnq2")
@@ -250,7 +266,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_chg63")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Timer" type="Label" parent="." node_paths=PackedStringArray("streets")]
+[node name="Timer" type="Label" parent="."]
 z_index = 3
 layout_mode = 1
 anchors_preset = 5
@@ -266,7 +282,6 @@ label_settings = SubResource("LabelSettings_6h57d")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_uffq5")
-streets = [NodePath("../Map/Streets/Proizvodstvennaya"), NodePath("../Map/Streets/Vorovskovo"), NodePath("../Map/Streets/Solnechnaya"), NodePath("../Map/Streets/Moskovskaya"), NodePath("../Map/Streets/Stroiteley")]
 
 [node name="testing" type="Label" parent="."]
 visible = false
@@ -304,7 +319,7 @@ stream = ExtResource("11_8ammm")
 [node name="PiecePicked" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("12_y458n")
 
-[node name="GameFinisher" type="Node2D" parent="." node_paths=PackedStringArray("streets")]
+[node name="GameFinisher" type="Node2D" parent="."]
 script = ExtResource("3_uffq5")
 finishing_amount = 10
 streets_finishing_amount = 10
@@ -312,7 +327,7 @@ max_mistakes_amount = 3
 max_points = 30
 attempts_count_penalty_multiplier = 2
 minimal_time_for_penalty = 90
-streets = [NodePath("../Map/Streets/Proizvodstvennaya"), NodePath("../Map/Streets/Vorovskovo"), NodePath("../Map/Streets/Solnechnaya"), NodePath("../Map/Streets/Moskovskaya"), NodePath("../Map/Streets/Stroiteley")]
+start_from_second_game = true
 
 [node name="Continue" type="Button" parent="GameFinisher"]
 z_index = 4
@@ -675,7 +690,7 @@ position = Vector2(615, 27)
 
 [node name="Streets" type="Node2D" parent="Map" node_paths=PackedStringArray("options")]
 script = ExtResource("20_ci4lk")
-options = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley")]
+options = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley"), NodePath("Mendeleeva"), NodePath("Kochkinoy")]
 
 [node name="Proizvodstvennaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(22.6415, 1358.49)
@@ -691,7 +706,7 @@ correct_id = 1
 [node name="Solnechnaya" parent="Map/Streets" instance=ExtResource("20_k4184")]
 position = Vector2(-1920.75, -98.1132)
 rotation = 1.05592
-scale = Vector2(4, 4)
+scale = Vector2(2.5, 2.5)
 needs_to_be_different_direction = true
 correct_id = 2
 
@@ -705,33 +720,53 @@ needs_to_be_different_direction = true
 position = Vector2(569.811, -800)
 scale = Vector2(1.5, 1.5)
 
-[node name="Drawings" type="Node2D" parent="Map" node_paths=PackedStringArray("streets")]
+[node name="Mendeleeva" parent="Map/Streets" instance=ExtResource("20_k4184")]
+position = Vector2(1611.32, -335.849)
+rotation = -0.0261799
+scale = Vector2(2.5, 2.5)
+
+[node name="Kochkinoy" parent="Map/Streets" instance=ExtResource("20_k4184")]
+position = Vector2(-33.9622, -173.585)
+scale = Vector2(2, 2)
+needs_to_be_different_direction = true
+
+[node name="Drawings" type="Node2D" parent="Map"]
 script = ExtResource("22_chg63")
-streets = [NodePath("../Streets/Proizvodstvennaya"), NodePath("../Streets/Vorovskovo"), NodePath("../Streets/Solnechnaya"), NodePath("../Streets/Moskovskaya"), NodePath("../Streets/Stroiteley")]
 
 [node name="Proizvodstvennaya" type="Sprite2D" parent="Map/Drawings"]
-position = Vector2(-886.792, 830.189)
-scale = Vector2(0.550314, 0.724618)
-texture = ExtResource("2_2pnq2")
+position = Vector2(-860.377, 928.302)
+scale = Vector2(0.347877, 0.375884)
+texture = ExtResource("24_h0u5n")
 
 [node name="Vorovskovo" type="Sprite2D" parent="Map/Drawings"]
-position = Vector2(600, -286.792)
-texture = ExtResource("2_2pnq2")
+position = Vector2(837.736, -200)
+scale = Vector2(0.30454, 0.328617)
+texture = ExtResource("25_dn0ko")
 
 [node name="Solnechnaya" type="Sprite2D" parent="Map/Drawings"]
-position = Vector2(-1777.36, -400)
-scale = Vector2(0.588051, 0.612309)
-texture = ExtResource("2_2pnq2")
+position = Vector2(-1820.54, -384.906)
+scale = Vector2(0.414292, 0.381269)
+texture = ExtResource("26_bto0n")
 
 [node name="Moskovskaya" type="Sprite2D" parent="Map/Drawings"]
-position = Vector2(1800.48, -589.332)
-scale = Vector2(0.399317, 0.412079)
-texture = ExtResource("2_2pnq2")
+position = Vector2(2660.79, -322.434)
+scale = Vector2(0.485531, 0.535533)
+texture = ExtResource("27_bto0n")
 
 [node name="Stroiteley" type="Sprite2D" parent="Map/Drawings"]
 position = Vector2(-192.453, -800)
 scale = Vector2(-0.413617, 0.505983)
 texture = ExtResource("2_2pnq2")
+
+[node name="Mendeleev" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(2185.38, -363.724)
+scale = Vector2(0.715409, 0.67097)
+texture = ExtResource("28_bto0n")
+
+[node name="Kochkinoy" type="Sprite2D" parent="Map/Drawings"]
+position = Vector2(-403.962, -65.6603)
+scale = Vector2(0.251965, 0.273585)
+texture = ExtResource("29_a86b7")
 
 [node name="Panel" type="Panel" parent="Map"]
 visible = false
@@ -748,267 +783,5 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2pnq2")
 
 [connection signal="pressed" from="ExitGameButton" to="GameFinisher" method="_exit"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/KP" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/School52" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/Church" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/Festival" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/School27" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/DOSAAF" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/Globus" method="player_lost_handler"]
-[connection signal="player_lost" from="GameFinisher" to="Map/Pieces/Konev" method="player_lost_handler"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/School52" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/KP" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/Vietnam" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/Fest" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/Infa15ballov" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/DOSAAF" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/Abobus" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/SportsSchool" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/Konev" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Cells/Pool" method="_on_switch_game"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/KP" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/School52" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/Church" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/Festival" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/School27" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/DOSAAF" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/Globus" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/Konev" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/Pool" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Pieces/SportsSchool" method="_on_game_switch"]
-[connection signal="switch_game" from="GameFinisher" to="Map/Streets" method="_on_game_switched"]
 [connection signal="pressed" from="GameFinisher/Continue" to="GameFinisher" method="_on_button_press"]
 [connection signal="game_started" from="Map" to="TimerAndAtts" method="_unpause_timer"]
-[connection signal="piece_placed_correctly" from="Map/Cells/School52" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/School52" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/School52" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/KP" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/KP" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/KP" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/Vietnam" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/Vietnam" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/Vietnam" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/Fest" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/Fest" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/Fest" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/Infa15ballov" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/Infa15ballov" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/Infa15ballov" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/DOSAAF" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/DOSAAF" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/DOSAAF" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/Abobus" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/Abobus" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/Abobus" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/SportsSchool" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/SportsSchool" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/SportsSchool" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/Konev" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/Konev" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/Konev" to="GameFinisher" method="accept_mistake"]
-[connection signal="piece_placed_correctly" from="Map/Cells/Pool" to="GameFinisher" method="accept_cell"]
-[connection signal="player_made_mistake" from="Map/Cells/Pool" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="player_made_mistake" from="Map/Cells/Pool" to="GameFinisher" method="accept_mistake"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/KP" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/KP" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School52" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School52" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Church" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Church" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Festival" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Festival" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/School27" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/School27" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/DOSAAF" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Globus" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Globus" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Konev" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Konev" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/Pool" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/Pool" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/School52" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/KP" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Vietnam" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Fest" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Infa15ballov" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/DOSAAF" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Abobus" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/SportsSchool" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Konev" method="_on_piece_entered"]
-[connection signal="placed_in_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Pool" method="_on_piece_entered"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/School52" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/KP" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Vietnam" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Fest" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Infa15ballov" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/DOSAAF" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Abobus" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/SportsSchool" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Konev" method="handle_recreation"]
-[connection signal="remove_from_cell" from="Map/Pieces/SportsSchool" to="Map/Cells/Pool" method="handle_recreation"]
-[connection signal="correct" from="Map/Streets" to="GameFinisher" method="accept_cell"]
-[connection signal="mistake" from="Map/Streets" to="Timer" method="_timer_on_player_mistake"]
-[connection signal="mistake" from="Map/Streets" to="GameFinisher" method="accept_mistake"]

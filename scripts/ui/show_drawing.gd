@@ -1,12 +1,10 @@
 extends Node2D
 
-@export var streets: Array[Node2D]
-
 func _ready() -> void:
 	for c in get_children():
 		c.visible = false
 		
-	for s in streets:
+	for s in SharedObjects.instance.streets:
 		s.correct_drawing_picked.connect(_on_drawing_picked)
 		
 func _on_drawing_picked(id):

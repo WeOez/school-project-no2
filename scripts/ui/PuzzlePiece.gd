@@ -29,6 +29,11 @@ var mistake_pieces = []
 var picked_pieces = []
 
 func _ready() -> void:
+	self.area_entered.connect(_on_other_piece_entered)
+	self.area_exited.connect(_on_other_piece_exited)
+	self.mouse_entered.connect(_on_area_2d_mouse_entered)
+	self.mouse_exited.connect(_on_area_2d_mouse_exited)
+	
 	#Делаем FadeIn эффект
 	self.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	#self.scale = Vector2(1.5,1.5)
@@ -81,13 +86,6 @@ func place_piece_back():
 		tween.tween_property(self, "rotation_degrees", 0.0, 0.2)
 		remove_from_cell_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		is_on_starting_pos = true
-
-func player_lost_handler():
-	if not piece_positions in occupied_positions:
-		self.set_deferred("monitorable", false) #Чтобы оно не реагировало во время перемещения
-		var tween = create_tween()
-		tween.tween_property(self, "position", piece_positions[0], 0.35).set_ease(Tween.EASE_IN_OUT)
-		remove_from_cell_button.modulate = Color(1.0, 1.0, 1.0, 0.0)
 		
 #Из-за бага при возвращении объекта нужна эта тема
 func restore_piece():
@@ -215,6 +213,3 @@ func _on_other_piece_entered(piece):
 func _on_other_piece_exited(piece):
 	if not is_placed and not is_draggable or is_on_starting_pos:
 		remove_from_cell_button.mouse_filter = Control.MOUSE_FILTER_STOP
-
-func _on_game_switch():
-	self.queue_free()

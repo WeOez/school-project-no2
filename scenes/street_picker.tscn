@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://0vggfaigyivv"]
+[gd_scene load_steps=25 format=3 uid="uid://0vggfaigyivv"]
 
-[ext_resource type="Script" uid="uid://dcgvuy04wx7jl" path="res://scripts/street_picker.gd" id="1_458dy"]
+[ext_resource type="Script" uid="uid://dcgvuy04wx7jl" path="res://scripts/main functionality/street_picker.gd" id="1_458dy"]
 [ext_resource type="Texture2D" uid="uid://ccg4v4j4blfq7" path="res://assets/arrow.png" id="2_glvu8"]
 [ext_resource type="PackedScene" uid="uid://c08a4jkck4i5u" path="res://scenes/drawings.tscn" id="3_i1yyk"]
 
@@ -95,13 +95,16 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru7kl"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uuouj"]
+
 [node name="street_picker" type="Node2D" node_paths=PackedStringArray("names", "button", "button_text", "arrow", "drawing")]
 script = ExtResource("1_458dy")
-names = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley")]
+names = [NodePath("Proizvodstvennaya"), NodePath("Vorovskovo"), NodePath("Solnechnaya"), NodePath("Moskovskaya"), NodePath("Stroiteley"), NodePath("Mendeleeva"), NodePath("Kochkinoy")]
 button = NodePath("Button")
 button_text = NodePath("ButtonText")
 arrow = NodePath("Button/Arrow")
 drawing = NodePath("Drawings")
+option_size = Vector2(254, 46)
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = -1
@@ -206,6 +209,46 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_uuouj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_deo6o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_deo6o")
 
+[node name="Mendeleeva" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uuouj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uuouj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_deo6o")
+
+[node name="Kochkinoy" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -23.0
+offset_right = 127.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ru7kl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uuouj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_deo6o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_deo6o")
+
 [node name="ButtonText" type="Label" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -219,9 +262,7 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Drawings" parent="." node_paths=PackedStringArray("arrow", "button_text") instance=ExtResource("3_i1yyk")]
-arrow = NodePath("../Button/Arrow")
-button_text = NodePath("../ButtonText")
+[node name="Drawings" parent="." instance=ExtResource("3_i1yyk")]
 
 [connection signal="pressed" from="Button" to="." method="_on_pressed"]
 [connection signal="area_entered" from="Button/Area2D" to="." method="_on_area_entered"]

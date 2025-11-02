@@ -12,6 +12,10 @@ signal piece_placed_correctly(piece)
 signal player_made_mistake(piece)
 
 func _ready() -> void:
+	for p in SharedObjects.instance.pieces:
+		p.placed_in_cell.connect(_on_piece_entered)
+		p.remove_from_cell.connect(handle_recreation)
+	
 	#Делаем FadeIn эффект
 	self.modulate = Color(1.0, 1.0, 1.0, 0.0)
 	mesh.modulate = Color(1.0, 1.0, 1.0, 0.0)
@@ -69,6 +73,3 @@ func check_piece(piece):
 					piece.add_to_group("incorrectly_placed_pieces")
 					tween.tween_property(piece.remove_from_cell_button, "modulate", Color.RED, 0.2)
 					player_made_mistake.emit(piece)
-
-func _on_switch_game():
-	self.queue_free()

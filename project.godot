@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AttemptsCounter="*res://scripts/attempts_counter.gd"
-MainWindow="*res://scripts/main_window.gd"
+AttemptsCounter="*res://scripts/main functionality/attempts_counter.gd"
+MainWindow="*res://scripts/ui/main_window.gd"
 
 [display]
 

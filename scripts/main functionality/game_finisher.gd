@@ -30,11 +30,6 @@ var target_modulate = Color(1.0, 1.0, 1.0, 1.0)
 @onready var piece_placed_incorrectly: AudioStreamPlayer2D = $"../Sounds/PiecePlacedIncorrectly"
 @onready var win_sound: AudioStreamPlayer2D = $"../Sounds/Win"
 
-@export var streets: Array[Node2D]
-
-signal player_lost
-signal switch_game
-
 func _reset_sound_volume(volume: float, sound: AudioStreamPlayer2D):
 	sound.volume_db = volume
 
@@ -78,9 +73,16 @@ func _ready() -> void:
 	if start_from_second_game:
 		correct_pieces.resize(10)
 	
-	for s in streets:
+	for c in SharedObjects.instance.cells:
+		c.piece_placed_correctly.connect(accept_cell)
+		c.player_made_mistake.connect(accept_mistake)
+	
+	for s in SharedObjects.instance.streets:
 		s.correct_drawing_picked.connect(accept_cell)
 		s.incorrect_drawing_picked.connect(accept_mistake)
+	
+	SharedObjects.instance.street_manager.correct.connect(accept_cell)
+	SharedObjects.instance.street_manager.mistake.connect(accept_mistake)
 	
 func _process(delta: float) -> void:
 	if correct_pieces.size() == finishing_amount and not is_game_switched:
@@ -129,7 +131,14 @@ func _on_button_press():
 	tween.tween_property(win, "modulate", starting_modulate, 0.5)
 	tween.tween_property(continue_button, "modulate", starting_modulate, 0.5)
 	continue_button.visible = false
-	switch_game.emit()
+	
+	#меняем этапы
+	for c in SharedObjects.instance.cells:
+		c.queue_free()
+	for p in SharedObjects.instance.pieces:
+		p.queue_free()
+		
+	SharedObjects.instance.street_manager._on_game_switched()
 	
 func count_points() -> int:
 	var points: int = 0
