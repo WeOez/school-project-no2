@@ -5,7 +5,7 @@ extends Node2D
 @export var button_text: Label
 @export var arrow: Sprite2D
 @export var needs_to_be_different_direction: bool
-@export var drawing: Node2D
+@export var drawing: Control
 @export var option_size: Vector2
 
 var id: int
@@ -14,9 +14,10 @@ var offset: float
 var mouse_overlaps_option = false
 var original_rotation: float
 
-var option_positions = []
+var picked_options = []
+var available_options = []
 
-signal option_picked(option_id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D, drawing: Node2D)
+signal option_picked(option_id: int, option: Button, picker_id: int, self_button: Button, arrow: Sprite2D, drawing: Control)
 signal correct_drawing_picked(id: int)
 signal incorrect_drawing_picked(id: int)
 
@@ -29,25 +30,35 @@ func _ready() -> void:
 		i.mouse_entered.connect(_on_mouse_entered_option)
 		i.mouse_exited.connect(_on_mouse_exited_option)
 	original_rotation = self.rotation_degrees
-	set_positions()
+	
+	#drawing.rotation_degrees = original_rotation
+	#print(drawing.rotation_degrees)
+	available_options = Utils.instance._subcrtact_array(names, picked_options)
+	
+	Utils.instance._set_positions_vertical_list(available_options, {}, button.position, option_size)
 	get_label_text()
 	
 	drawing.visible = false
-	drawing.option_picked.connect(_test)
+	#drawing.option_picked.connect(_test)
+	drawing.get_child(1).option_picked.connect(_test)
+	SharedObjects.instance.street_manager.correct.connect(_on_correct_option_picked)
 	
 	if needs_to_be_different_direction:
 		rotate_arrow()
 	
 func _test(draw_id):
 	match draw_id:
-		1, 2, 3, 4, 5, 6, 7:
-			var index = draw_id - 1
-			if index == self.get_index():
+		0, 1, 2, 3, 4, 5, 6, 7:
+			if draw_id == self.get_index():
 				correct_drawing_picked.emit(self)
-				print(1)
 			else:
-				incorrect_drawing_picked.emit(index)
-				print(index, " ", self.get_index())
+				print(draw_id, " ", self.get_index())
+				incorrect_drawing_picked.emit(draw_id)
+	
+func _on_correct_option_picked(id: int):
+	picked_options.append(names[id])
+	available_options = Utils.instance._subcrtact_array(names, picked_options)
+	Utils.instance._set_positions_vertical_list(available_options, {}, button.position, option_size)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
@@ -57,25 +68,12 @@ func _input(event: InputEvent) -> void:
 			button.visible = true
 			button_text.visible = true
 			
-			for i in names:
+			for i in available_options:
 				i.visible = false
 				tween.tween_property(i, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.15)
-
-func set_positions():
-	var max_negative_offset = floori(names.size() / 2) * -option_size.y
-	var max_positive_offset = floori(names.size() / 2) * option_size.y
-	var offset1: int
-	option_positions.resize(names.size())
 	
-	for i in names.size():
-		offset1 = max_negative_offset + (46 * i)
-		names[i].position = button.position + Vector2(0, offset1)
-		
-		if not option_positions.has(offset1):
-			option_positions.set(i, offset1)
-
 func get_label_text():
-	for i in names:
+	for i in available_options:
 		id = i.get_index() - 1
 		match id: 
 			0:
@@ -101,7 +99,7 @@ func _on_pressed():
 	tween.tween_property(self, "rotation_degrees", 0.0, 0.1)
 	button.visible = false
 	button_text.visible = false
-	for i in names:
+	for i in available_options:
 		i.visible = true
 		tween.tween_property(i, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.15)
 		
@@ -114,7 +112,7 @@ func _on_area_exited(area):
 func _on_option_picked(option):
 	var tween = create_tween()
 	tween.tween_property(self, "rotation_degrees", original_rotation, 0.1)
-	for i in names:
+	for i in available_options:
 		i.visible = false
 		tween.tween_property(i, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.15)
 
