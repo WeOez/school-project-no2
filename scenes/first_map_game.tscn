@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ccmv87igm7j27" path="res://assets/black_background-round-corners.png" id="2_2pnq2"]
 [ext_resource type="Texture2D" uid="uid://cih1g1wtyrlhs" path="res://assets/potential_background.jpg" id="2_6h57d"]
 [ext_resource type="Script" uid="uid://cbk868axrc0xm" path="res://scripts/ui/back_ground_dimmer.gd" id="2_ih8u0"]
-[ext_resource type="Script" uid="uid://bhqcpta4k1b0j" path="res://scripts/util/UtilFuncs.gd" id="3_1fgku"]
+[ext_resource type="Script" path="res://scripts/util/UtilFuncs.gd" id="3_1fgku"]
 [ext_resource type="Script" uid="uid://cp6gsnjvwbnjt" path="res://scripts/main functionality/game_finisher.gd" id="3_uffq5"]
 [ext_resource type="Script" uid="uid://btsi2jjyyyxtp" path="res://scripts/main functionality/Cell.gd" id="5_e6fs0"]
 [ext_resource type="PackedScene" uid="uid://b4cegwy0qk3mq" path="res://scenes/house_icon.tscn" id="6_6h57d"]

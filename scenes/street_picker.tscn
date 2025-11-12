@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcgvuy04wx7jl" path="res://scripts/main functionality/street_picker.gd" id="1_458dy"]
 [ext_resource type="Texture2D" uid="uid://ccg4v4j4blfq7" path="res://assets/arrow.png" id="2_glvu8"]
-[ext_resource type="PackedScene" uid="uid://blbwmhebt0kns" path="res://scenes/drawings_test.tscn" id="3_i1yyk"]
+[ext_resource type="PackedScene" path="res://scenes/drawings_test.tscn" id="3_i1yyk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_458dy"]
 
